@@ -15,4 +15,10 @@ export class CourseFormComponent {
       category: ['', Validators.required],
     });
   }
+
+  onSubmit() {
+  }
+
+  onCancel() {
+  }
 }
