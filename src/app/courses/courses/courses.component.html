@@ -1,1 +1,22 @@
-<p>courses works!</p>
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar class="mat-primary mat-300">
+      Cursos disponíveis
+    </mat-toolbar>
+
+    <mat-table [dataSource]="courses" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Curso </mat-header-cell>
+        <mat-cell *matCellDef="let course"> {{ course.name }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+        <mat-cell *matCellDef="let course"> {{ course.category }} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>
